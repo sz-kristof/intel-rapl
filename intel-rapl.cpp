@@ -1104,52 +1104,7 @@ static std::vector<double> rapl_perf(int core,int choice, int ms_time) {
 		{
 			vec.insert(vec.end(),l);
 		}
-		/*int k = 0;
-		for ( int i = 0; i < sz; ++i)  // elso meres
-		{
-			v[k] = v[k]*7;
-			k+=1; 
-		}
 
-
-		//k = 0;
-		for ( int i = 0; i < sz; ++i)  // masodik meres
-		{
-			v[k] = v[k]*7;
-			k+=20;
-		} */
-
-
-		//int k = 0;
-		/*for ( int i = 0; i < sz; ++i)  // elso meres
-		{
-			int r = rand()%sz;       // hogy itt is mérjük a random szám generálás idejét
-			v[k] = v[k]*r;  // felhasználjuk r-et
-		k+=1; 
-		} */
-
-		/*for ( int i = 0; i < sz; ++i)  // masodik meres
-		{
-			int r = rand()%sz;
-			v[r] = v[r]*r;  // véletlen index, hogy ne tudja előre be-cachelni...
-		} */
-
-
-		/*for(int i = 0;i<testvec.size()-20;i++)
-	{
-		for(int j = i;j<testvec.size();j=j+20)
-		{
-			cout<<j<<"\n";
-			testvec[j] = testvec[j]*7;
-
-		}
-	}*/
-
-	/*for(int i = 0;i<testvec.size()-20;i++)
-	{
-		testvec[i] = testvec[i]*7;
-		testvec[i+20] = testvec[i+20]*7;
-	}*/
 
 
 
@@ -1699,58 +1654,10 @@ int main(int argc, char **argv) {
 	cpu_model=detect_cpu();
 	detect_packages();
 
-	/*if ((!force_msr) && (!force_perf_event)) {
-		result=rapl_sysfs(core);
-	}*/
 
-	/*if (result<0) {
-		if ((force_perf_event) && (!force_msr)) {
-			
-		}
-	}*/
-    //result=rapl_perf(core);
-    
-    //vector<int> vect(2000);
      
      double k = 0.0;
 
-    /*for (int i = 0; i < vect.size(); i++)
-    {
-		//cout<<k<<endl;
-        for (int j = 0; j < vect.size(); j++)
-        {
-            vect[i]=log10(i*j);
-			k = k + rapl_perf(core);
-			cout << k << endl;
-
-        }    
-    }
-
-	cout<<k<<endl;*/
-
-	/*double l = 0.0;
-
-
-	for (int i = 0;i<25000;i++)
-	{
-		cout<<i<<endl;
-		l = l + rapl_perf(core);
-		cout << l <<endl;
-	}
-
-	cout<<"--------------"<<endl;
-	long x = 0;
-	for (int i = 0;i<25000;i++)
-	{
-		cout<<i<<endl;
-		k = k + rapl_perf(core);
-		x = log2(8264813874395086919);
-		x = x % 825124312321431241;
-		cout << k <<endl;
-	}
-
-	cout<<l<<endl;
-	cout<<k<<endl;*/
 	
 	int choice;
 
