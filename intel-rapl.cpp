@@ -1501,6 +1501,8 @@ static std::vector<double> rapl_perf(int core,int choice, int ms_time) {
 		return  {(double)value*scale[0],(double)value3*scale[2],(double)value4*scale[3],(double)std::chrono::duration_cast<std::chrono::milliseconds>(t).count()};
 	}
 
+	return  {-1};
+
 	
 }
 
@@ -1527,7 +1529,7 @@ static int rapl_sysfs(int core) {
 		i=0;
 		sprintf(basename[j],"/sys/class/powercap/intel-rapl/intel-rapl:%d",
 			j);
-		sprintf(tempfile,"%s/name",basename[j]);
+		//sprintf(tempfile,"%s/name",basename[j]);
 		fff=fopen(tempfile,"r");
 		if (fff==NULL) {
 			fprintf(stderr,"\tCould not open %s\n",tempfile);
@@ -1540,8 +1542,8 @@ static int rapl_sysfs(int core) {
 
 		/* Handle subdomains */
 		for(i=1;i<NUM_RAPL_DOMAINS;i++) {
-			sprintf(tempfile,"%s/intel-rapl:%d:%d/name",
-				basename[j],j,i-1);
+			//sprintf(tempfile,"%s/intel-rapl:%d:%d/name",
+			//	basename[j],j,i-1);
 			fff=fopen(tempfile,"r");
 			if (fff==NULL) {
 				//fprintf(stderr,"\tCould not open %s\n",tempfile);
